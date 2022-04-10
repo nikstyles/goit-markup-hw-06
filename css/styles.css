@@ -503,7 +503,8 @@ ul {
   display: flex;
 }
 
-.ftr-title-social {
+.ftr-title-social,
+.title-subscription {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
@@ -514,7 +515,7 @@ ul {
 }
 
 .ftr-social {
-  margin-left: 70px;
+  margin-left: 65px;
   padding-top: 12px;
 }
 
@@ -532,6 +533,52 @@ ul {
   background: var(--accent-color);
 }
 
+.subscription {
+  margin-left: auto;
+  padding-top: 12px;
+}
+
+.subscription-input {
+  width: 358px;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background-color: inherit;
+  color: var(--primary-white-color);
+}
+
+.subscription-input::placeholder {
+}
+
+.subscription-btn {
+  cursor: pointer;
+  background: #2196f3;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border-color: transparent;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  align-items: center;
+  letter-spacing: 0.06em;
+  color: var(--primary-white-color);
+
+  padding: 8px 28px;
+  margin-left: 15px;
+
+  fill: var(--primary-white-color);
+  display: inline-flex;
+  align-items: center;
+}
+
+.icon-send {
+  margin-left: 10px;
+}
+
+/* ------------ backdrop -------------- */
+
 .backdrop {
   position: fixed;
   width: 100vw;
@@ -540,8 +587,10 @@ ul {
   top: 0;
   left: 0;
   z-index: 2;
-  transition: opacity 600ms cubic-bezier(0, 0.48, 0.29, 0.94);
-  transform: opacity 0%;
+  transition: opacity 500ms cubic-bezier(0, 0.48, 0.29, 0.94),
+    visibility 600ms cubic-bezier(0, 0.48, 0.29, 0.94),
+    scale 300ms cubic-bezier(0, 0.48, 0.29, 0.94);
+  /* transform: opacity 0%; */
 }
 
 .modal {
@@ -557,11 +606,8 @@ ul {
   border-radius: 4px;
 }
 
-.backdrop.is-hidden .modal {
-  transform: opacity 0%;
-}
-
 .is-hidden {
+  transform: scale(120%);
   opacity: 0; /* скритие визуальное */
   pointer-events: none; /* запрещает нажимать по елементу */
   visibility: hidden; /* скритие от tab,от фокуса */
@@ -577,6 +623,22 @@ ul {
   background: var(--primary-white-color);
   display: flex;
   padding: 6px;
+}
+
+.modal-cotainer {
+  padding: 40px;
+}
+.modal-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
 }
 
 /* ------------ Page Portfolio -------------- */
